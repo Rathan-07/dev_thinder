@@ -8,6 +8,9 @@ import appStore from "./utils/appStore";
 import { useEffect } from "react";
 import { addUser } from "./utils/userSlice";
 import { Feed } from "./components/Feed";
+import { ToastContainer } from "react-toastify";
+import { Connections } from "./components/Connections";
+import { Requests } from "./components/Requests";
 
 export default function App() {
 
@@ -16,11 +19,14 @@ export default function App() {
     <>
   
          <BrowserRouter basename="/">
+              <ToastContainer />
         <Routes>
           <Route path="/" element={<Body />}>
           <Route path="/feed"  element={<Feed/>}/>
              <Route path="/login" element={<Login />} />
             <Route path="/Profile" element={<Profile />} />
+            <Route path="/connections" element ={<Connections/>}/>
+             <Route path="/requests" element ={<Requests/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
